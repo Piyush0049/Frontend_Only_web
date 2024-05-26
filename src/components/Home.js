@@ -6,6 +6,7 @@ import { AccountCircle, Lock, Visibility, VisibilityOff } from '@mui/icons-mater
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
+import {Box} from '@mui/material';
 
 const BackgroundImage = styled(Box)({
   backgroundImage: 'url(https://www.unfluke.in/static/media/auth_bg.a72dab35.jpg)',
