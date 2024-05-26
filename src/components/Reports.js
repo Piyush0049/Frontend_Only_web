@@ -4,7 +4,6 @@ import { styled } from '@mui/material/styles';
 import {
     LineChart, Line, XAxis, YAxis, Tooltip, Legend, CartesianGrid, BarChart, Bar, PieChart, Pie, ResponsiveContainer
 } from 'recharts';
-import Header from './Header';
 import { useEffect, useState } from 'react';
 
 const data = [

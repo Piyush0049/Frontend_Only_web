@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Box, Typography, TextField, Button, Link, InputAdornment, IconButton } from '@mui/material';
+import { Typography, TextField, Button, Link, InputAdornment, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 import { motion } from 'framer-motion';
 import { AccountCircle, Lock, Visibility, VisibilityOff } from '@mui/icons-material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
-import Header from './Header';
 
 const BackgroundImage = styled(Box)({
   backgroundImage: 'url(https://www.unfluke.in/static/media/auth_bg.a72dab35.jpg)',

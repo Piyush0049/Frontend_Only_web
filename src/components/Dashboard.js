@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Grid, Typography, Paper, useMediaQuery } from '@mui/material';
-import Sidebar from './Sidebar';
-import Header from './Header';
+import { Box, Grid, Typography, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import {
     BarChart,
@@ -87,12 +85,12 @@ const Dashboard = () => {
     }, [windowWidth]);
 
     return (
-        <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6", height: "100%", width : "100%" }}>
-            <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8, paddingLeft : "17%", width : "auto" }}>
+        <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6", height: "100%", width: "100%" }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8, paddingLeft: "17%", width: "auto" }}>
                 <Grid container spacing={3} >
-                    <Grid item xs={ 12 } md={isSmallScreen ? 12 : 3}>
+                    <Grid item xs={12} md={isSmallScreen ? 12 : 3}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%', width : "auto" }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%', width: "auto" }}>
                                 <Typography variant="h6">1,567</Typography>
                                 <Typography variant="body2">Review Cases</Typography>
                                 <PieChart width={150} height={150}>
@@ -102,7 +100,7 @@ const Dashboard = () => {
                             </Box>
                         </Item>
                     </Grid>
-                    <Grid item xs={ 12 } md={isSmallScreen ? 12 : 3}>
+                    <Grid item xs={12} md={isSmallScreen ? 12 : 3}>
                         <Item>
                             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
                                 <Typography variant="h6">224</Typography>
@@ -144,7 +142,7 @@ const Dashboard = () => {
                             </Box>
                         </Item>
                     </Grid>
-                    <Grid item xs={ 12 } md={isSmallScreen ? 12 : 3}>
+                    <Grid item xs={12} md={isSmallScreen ? 12 : 3}>
                         <Item>
                             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
                                 <Typography variant="h6">3.5m</Typography>
@@ -169,7 +167,7 @@ const Dashboard = () => {
                             </Box>
                         </Item>
                     </Grid>
-                    <Grid item xs={ 12} md={6}>
+                    <Grid item xs={12} md={6}>
                         <Item>
                             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
                                 <Typography variant="h6">2,567</Typography>
@@ -177,7 +175,7 @@ const Dashboard = () => {
                             </Box>
                         </Item>
                     </Grid>
-                    <Grid item xs={ 12} md={isSmallScreen ? 12 : 6}>
+                    <Grid item xs={12} md={isSmallScreen ? 12 : 6}>
                         <Item>
                             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
                                 <Typography variant="h6">Review Cases Over Time</Typography>

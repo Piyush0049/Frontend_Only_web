@@ -1,6 +1,6 @@
 import React from 'react';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Avatar, Box, Divider, Typography, TextField, CircularProgress, Button } from '@mui/material';
-import { Home, Dashboard, People, BarChart, Receipt, Settings, Support, Search } from '@mui/icons-material';
+import { Drawer, List, ListItem, ListItemIcon, ListItemText, Avatar, Box, Divider, Typography } from '@mui/material';
+import { Home, Dashboard, People, BarChart, Receipt, Settings, Support } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -76,12 +76,6 @@ const Sidebar = () => {
             <ListItemText primary={item.text} />
           </ListItem>
         ))}
-        <Box sx={{ paddingTop: '35px', textAlign: 'center', marginTop: 'auto' }}>
-          <CircularProgress variant="determinate" value={80} size={50} thickness={5} sx={{ color: '#4caf50', marginBottom: '10px' }} />
-          <Typography variant="body2" color="white">Used credits this month</Typography>
-          <Typography variant="body1" sx={{ color: 'white', fontWeight: 'bold' }}>80%</Typography>
-          <Typography variant="body2" color="white" sx={{ mb: 1 }}>Your team has used 80% of your available credits. Need more?</Typography>
-        </Box>
       </List>
     </Drawer>
   );
