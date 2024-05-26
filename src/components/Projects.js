@@ -5,7 +5,6 @@ import { Line, Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { useState, useEffect } from 'react';
 
-// Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend);
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -86,12 +85,10 @@ const Projects = () => {
 
   return (
     <Box sx={{ display: 'flex', backgroundColor : "#D6D6D6", height : "100%" }}>
-      <Box component="nav" sx={{ width: windowWidth > 780 ? 240 : 50, flexShrink: 0 }}>
-        {/* Sidebar Placeholder */}
+      <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 : null, flexShrink: 0 }}>
       </Box>
       <Box sx={{ flexGrow: 1 }}>
         <Box component="header" sx={{ height: 64 }}>
-          {/* Header Placeholder */}
         </Box>
         <Container sx={{ pt: 4, pb: 8 }}>
           <Grid container spacing={4}>

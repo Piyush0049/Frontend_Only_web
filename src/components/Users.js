@@ -94,7 +94,7 @@ const UsersList = () => {
 
     return (
         <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6" }}>
-            <Box component="nav" sx={{ width: windowWidth > 1020 ? 240 :  windowWidth > 720 ? 80: 50, flexShrink: 0 }}>
+            <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 :  windowWidth > 720 ? 80: null, flexShrink: 0 }}>
                 {/* Sidebar Placeholder */}
             </Box>
             <Box sx={{ flexGrow: 1 }}>

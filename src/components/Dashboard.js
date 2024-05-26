@@ -86,7 +86,7 @@ const Dashboard = () => {
 
     return (
         <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6", height: "100%", width: "100%" }}>
-            <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8, paddingLeft: "17%", width: "auto" }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8, paddingLeft: windowWidth > 1460 ? "17%" : (windowWidth > 1040 ? "24%" : null), width: "auto" }}>
                 <Grid container spacing={3} >
                     <Grid item xs={12} md={isSmallScreen ? 12 : 3}>
                         <Item>

@@ -74,7 +74,7 @@ const Tasks = () => {
 
   return (
     <Box sx={{ display: 'flex', minHeight : "1000px", height : "100%", paddingTop : "70px", backgroundColor : "#D6D6D6" }}>
-      <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 : (windowWidth > 510 ? 120 : 60 ) , flexShrink: 0 }}>
+      <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 : null , flexShrink: 0 }}>
         {/* Sidebar Placeholder */}
       </Box>
       <Box sx={{ flexGrow: 1 }}>

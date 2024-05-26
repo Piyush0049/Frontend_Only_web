@@ -47,10 +47,12 @@ const SocialButton = styled(IconButton)({
 const LoginBox = styled(motion.div)(({ windowWidth }) => ({
   backgroundColor: 'white',
   borderRadius: '10px',
-  padding: '40px',
+  paddingRight: '40px',
+  paddingLeft : "40px",
+  paddingTop : windowWidth > 680 ? '40px' : "20px",
+  paddingBottom : windowWidth > 680 ? '40px' : "20px",
   width: '100%',
-  maxWidth: windowWidth > 680 ? '400px' : '330px',
-  marginLeft : windowWidth > 680 ? null : '10%',
+  maxWidth: windowWidth > 680 ? '400px' : '310px',
   zIndex: 1,
   boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)',
 }));
@@ -77,7 +79,7 @@ const HomePage = () => {
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
-        <Typography variant="h5" mb={2} align="center">
+        <Typography variant="h5" mb={2} align="center" fontSize={windowWidth < 660 ? "31px" : null}>
           Login to your account
         </Typography>
         <TextField

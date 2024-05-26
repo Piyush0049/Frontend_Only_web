@@ -29,10 +29,11 @@ const Header = () => {
         function handleResize() {
           setWindowWidth(window.innerWidth);
         }
-        handleResize(); // Call on initial render
+        handleResize(); 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -40,8 +41,7 @@ const Header = () => {
     navigate(route);
   };
 
-  // Get the current path and format it to be displayed as the title
-  const path = location.pathname.slice(1); // remove the leading '/'
+  const path = location.pathname.slice(1); 
   const title = path ? path.charAt(0).toUpperCase() + path.slice(1) : 'Home';
 
   return (

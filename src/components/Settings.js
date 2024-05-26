@@ -8,7 +8,7 @@ const getTheme = (darkMode) => createTheme({
     palette: {
         mode: darkMode ? 'dark' : 'light',
         background: {
-            default: darkMode ? '#121212' : '#ECEFF1',
+            default: darkMode ? '#121212' : '#D6D6D6',
         },
         text: {
             primary: darkMode ? '#ffffff' : '#000000',
@@ -16,7 +16,6 @@ const getTheme = (darkMode) => createTheme({
     },
 });
 
-// Styled components
 const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
     textAlign: 'left',
@@ -40,7 +39,7 @@ const Settings = () => {
             setWindowWidth(window.innerWidth)
             console.log(windowWidth)
         }
-        handleResize(); // Call on initial render
+        handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [windowWidth]);
@@ -64,9 +63,9 @@ const Settings = () => {
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{ display: 'flex', backgroundColor: theme.palette.background.default, minHeight: '100vh', pt: 8 }}>
-            <Box component="nav" sx={{ width: windowWidth > 1034 ? 240 : 50, flexShrink: 0 }}>
-        {/* Sidebar Placeholder */}
-      </Box>
+                <Box component="nav" sx={{ width: windowWidth > 1034 ? 240 : null, flexShrink: 0 }}>
+                    
+                </Box>
                 <Container sx={{ pt: 4, pb: 8 }}>
                     <Grid container spacing={4}>
                         <Grid item xs={12}>
@@ -74,9 +73,9 @@ const Settings = () => {
                                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                                     <Avatar src="https://via.placeholder.com/150" sx={{ width: 64, height: 64, mr: 2 }} />
                                     <Box>
-                                        <Typography variant="h5" sx={{ fontWeight: 'bold', fontSize : windowWidth > 582 ? null : "20px", }}>Piyush Joshi</Typography>
-                                        <Typography variant="subtitle1" style={{fontSize : windowWidth > 582 ? null : "14px",}}>Full Stack Developer</Typography>
-                                        <Typography variant="subtitle1" style={{fontSize : windowWidth > 582 ? null : "14px",}}>India, Haryana</Typography>
+                                        <Typography variant="h5" sx={{ fontWeight: 'bold', fontSize: windowWidth > 582 ? null : "20px", }}>Piyush Joshi</Typography>
+                                        <Typography variant="subtitle1" style={{ fontSize: windowWidth > 582 ? null : "14px", }}>Full Stack Developer</Typography>
+                                        <Typography variant="subtitle1" style={{ fontSize: windowWidth > 582 ? null : "14px", }}>India, Haryana</Typography>
                                     </Box>
                                     <Button variant="contained" color="primary" sx={{ ml: 'auto' }} onClick={handleProfileOpen}>Edit</Button>
                                 </Box>
@@ -117,7 +116,7 @@ const Settings = () => {
                         </Grid>
                         <Grid item xs={12}>
                             <Item>
-                                <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', fontSize : windowWidth > 582 ? null : "20px" }}>Preferences</Typography>
+                                <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', fontSize: windowWidth > 582 ? null : "20px" }}>Preferences</Typography>
                                 <FormControlLabel
                                     control={<MuiSwitch checked={darkMode} onChange={handleDarkModeToggle} />}
                                     label="Dark Mode"
@@ -126,7 +125,7 @@ const Settings = () => {
                         </Grid>
                         <Grid item xs={12}>
                             <Item>
-                                <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', fontSize : windowWidth > 582 ? null : "20px"  }}>Security</Typography>
+                                <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', fontSize: windowWidth > 582 ? null : "20px" }}>Security</Typography>
                                 <TextField label="Current Password" fullWidth margin="normal" type="password" />
                                 <TextField label="New Password" fullWidth margin="normal" type="password" />
                                 <TextField label="Confirm New Password" fullWidth margin="normal" type="password" />
