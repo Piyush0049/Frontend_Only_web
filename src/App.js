@@ -36,7 +36,7 @@ const App = () => {
       <ToggleSidebar/>
       }
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/reporting" element={<Reports />} />
