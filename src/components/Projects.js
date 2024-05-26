@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 ChartJS.register(CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend);
 
 const Item = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(3),
+  padding: "17px",
   textAlign: 'center',
   color: theme.palette.text.primary,
   background: theme.palette.mode === 'dark'
@@ -34,6 +34,7 @@ const Projects = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [windowWidth]);
+
   const lineData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
@@ -68,6 +69,8 @@ const Projects = () => {
   };
 
   const options = {
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -85,25 +88,27 @@ const Projects = () => {
 
   return (
     <Box sx={{ display: 'flex', backgroundColor : "#D6D6D6", height : "100%" }}>
-      <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 : null, flexShrink: 0 }}>
+      <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 : 25, flexShrink: 0 }}>
       </Box>
       <Box sx={{ flexGrow: 1 }}>
         <Box component="header" sx={{ height: 64 }}>
         </Box>
-        <Container sx={{ pt: 4, pb: 8 }}>
+        <Container sx={{ pt: 6, pb: 8 }}>
           <Grid container spacing={4}>
-            <Grid item xs={ windowWidth > 1440 ? 12 : 11}>
+            <Grid item xs={ windowWidth > 1440 ? 12 : 11.4}>
               <Item>
                 <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold', animation: 'fadeIn 2s' }} style={{fontSize : windowWidth > 780 ? null : "20px"}}>
                   Projects Overview
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 4, animation: 'slideInLeft 1s' }} style={{fontSize : windowWidth > 780 ? null : "12px"}}>
-                  This section provides an in-depth analysis of the various projects undertaken over the past months. The following graphs highlight the number of projects completed, ongoing, and the hours spent on each project. Understanding these metrics helps in better project planning and resource allocation.
+                  This section provides an in-depth analysis of the various projects undertaken over the past months. The following graphs highlight the number of projects completed, ongoing, and the hours spent on each project.
                 </Typography>
-                <Line data={lineData} options={options} />
+                <Box sx={{ width: '100%', height: windowWidth > 600 ? 500 : 230 }}>
+                  <Line data={lineData} options={options} />
+                </Box>
               </Item>
             </Grid>
-            <Grid item xs={ windowWidth > 1440 ? 12 : 11}>
+            <Grid item xs={ windowWidth > 1440 ? 12 : 11.4}>
               <Item>
                 <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', animation: 'fadeIn 2s' }} style={{fontSize : windowWidth > 780 ? null : "20px"}}>
                   Hours Spent on Projects
@@ -111,10 +116,13 @@ const Projects = () => {
                 <Typography variant="body1" sx={{ mb: 4, animation: 'slideInRight 1s' }} style={{fontSize : windowWidth > 780 ? null : "12px"}}>
                   The bar chart below represents the total hours spent on different projects. It helps in identifying the projects that are more time-intensive and can aid in better time management for future projects.
                 </Typography>
+                <Box sx={{ width: '100%', height: windowWidth > 600 ? 500 : 230 }}>
                 <Bar data={barData} options={options} />
+                </Box>
+                
               </Item>
             </Grid>
-            <Grid item xs={ windowWidth > 1440 ? 12 : 11}>
+            <Grid item xs={ windowWidth > 1440 ? 12 : 11.4}>
               <Item>
                 <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold', animation: 'fadeIn 2s' }} style={{fontSize : windowWidth > 780 ? null : "20px"}}>
                   Key Insights and Analysis

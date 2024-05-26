@@ -67,6 +67,11 @@ const Item = styled(Paper)(({ theme }) => ({
         transform: 'scale(1.05)',
         boxShadow: '0 0 20px rgba(0,0,0,0.2)',
     },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
 }));
 
 const Dashboard = () => {
@@ -77,134 +82,117 @@ const Dashboard = () => {
         function handleResize() {
             setIsSmallScreen(window.innerWidth < 1372);
             setWindowWidth(window.innerWidth)
-            console.log(windowWidth)
         }
-        handleResize(); // Call on initial render
+        handleResize(); 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [windowWidth]);
 
     return (
-        <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6", height: "100%", width: "100%" }}>
+        <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6", minHeight: "100vh", width: "100%", paddingTop : "30px" }}>
             <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8, paddingLeft: windowWidth > 1460 ? "17%" : (windowWidth > 1040 ? "24%" : null), width: "auto" }}>
-                <Grid container spacing={3} >
+                <Grid container spacing={3} justifyContent="center" alignItems="center">
                     <Grid item xs={12} md={isSmallScreen ? 12 : 3}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%', width: "auto" }}>
-                                <Typography variant="h6">1,567</Typography>
-                                <Typography variant="body2">Review Cases</Typography>
-                                <PieChart width={150} height={150}>
-                                    <Pie data={pieData} dataKey="value" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
-                                </PieChart>
-                                <Typography variant="caption" sx={{ mt: 1 }}>Distribution of Review Cases</Typography>
-                            </Box>
+                            <Typography variant="h6">1,567</Typography>
+                            <Typography variant="body2">Review Cases</Typography>
+                            <PieChart width={150} height={150}>
+                                <Pie data={pieData} dataKey="value" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
+                            </PieChart>
+                            <Typography variant="caption" sx={{ mt: 1 }}>Distribution of Review Cases</Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={isSmallScreen ? 12 : 3}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
-                                <Typography variant="h6">224</Typography>
-                                <Typography variant="body2">Pending Cases</Typography>
-                                <AreaChart width={150} height={150} data={areaData}>
-                                    <defs>
-                                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-                                        </linearGradient>
-                                        <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-                                            <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
-                                        </linearGradient>
-                                    </defs>
-                                    <XAxis dataKey="name" />
-                                    <YAxis />
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <Tooltip />
-                                    <Area type="monotone" dataKey="uv" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-                                    <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
-                                </AreaChart>
-                                <Typography variant="caption" sx={{ mt: 1 }}>Pending Cases Trend</Typography>
-                            </Box>
+                            <Typography variant="h6">224</Typography>
+                            <Typography variant="body2">Pending Cases</Typography>
+                            <AreaChart width={150} height={150} data={areaData}>
+                                <defs>
+                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+                                        <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                                    </linearGradient>
+                                    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
+                                        <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
+                                    </linearGradient>
+                                </defs>
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <Tooltip />
+                                <Area type="monotone" dataKey="uv" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                                <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
+                            </AreaChart>
+                            <Typography variant="caption" sx={{ mt: 1 }}>Pending Cases Trend</Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={isSmallScreen ? 12 : 3}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
-                                <Typography variant="h6">1,232</Typography>
-                                <Typography variant="body2">Approved Cases</Typography>
-                                <RadarChart cx={75} cy={75} outerRadius={50} width={150} height={150} data={radarData}>
-                                    <PolarGrid />
-                                    <PolarAngleAxis dataKey="subject" />
-                                    <PolarRadiusAxis angle={30} domain={[0, 150]} />
-                                    <Radar name="Cases" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                                </RadarChart>
-                                <Typography variant="caption" sx={{ mt: 1 }}>Approval Cases Analysis</Typography>
-                            </Box>
+                            <Typography variant="h6">1,232</Typography>
+                            <Typography variant="body2">Approved Cases</Typography>
+                            <RadarChart cx={75} cy={75} outerRadius={50} width={150} height={150} data={radarData}>
+                                <PolarGrid />
+                                <PolarAngleAxis dataKey="subject" />
+                                <PolarRadiusAxis angle={30} domain={[0, 150]} />
+                                <Radar name="Cases" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                            </RadarChart>
+                            <Typography variant="caption" sx={{ mt: 1 }}>Approval Cases Analysis</Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={isSmallScreen ? 12 : 3}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
-                                <Typography variant="h6">3.5m</Typography>
-                                <Typography variant="body2">Median Check Time</Typography>
-                                <BarChart width={150} height={150} data={[{ name: '', value: 3.5 }]}>
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="name" />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend />
-                                    <Bar dataKey="value" fill="#82ca9d" />
-                                </BarChart>
-                                <Typography variant="caption" sx={{ mt: 1 }}>Median Time for Checks</Typography>
-                            </Box>
+                            <Typography variant="h6">3.5m</Typography>
+                            <Typography variant="body2">Median Check Time</Typography>
+                            <BarChart width={150} height={150} data={[{ name: '', value: 3.5 }]}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Bar dataKey="value" fill="#82ca9d" />
+                            </BarChart>
+                            <Typography variant="caption" sx={{ mt: 1 }}>Median Time for Checks</Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
-                                <Typography variant="h6">5,748</Typography>
-                                <Typography variant="body2">Total Users</Typography>
-                            </Box>
+                            <Typography variant="h6">5,748</Typography>
+                            <Typography variant="body2">Total Users</Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
-                                <Typography variant="h6">2,567</Typography>
-                                <Typography variant="body2">Successful Checks</Typography>
-                            </Box>
+                            <Typography variant="h6">2,567</Typography>
+                            <Typography variant="body2">Successful Checks</Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={isSmallScreen ? 12 : 6}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
-                                <Typography variant="h6">Review Cases Over Time</Typography>
-                                <BarChart width={windowWidth > 650 ? 500 : 250} height={300} data={data}>
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="name" />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend />
-                                    <Bar dataKey="reviews" fill="#8884d8" />
-                                </BarChart>
-                                <Typography variant="caption" sx={{ mt: 1 }}>Monthly Review Cases</Typography>
-                            </Box>
+                            <Typography variant="h6">Review Cases Over Time</Typography>
+                            <BarChart width={windowWidth > 650 ? 500 : 250} height={300} data={data}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Bar dataKey="reviews" fill="#8884d8" />
+                            </BarChart>
+                            <Typography variant="caption" sx={{ mt: 1 }}>Monthly Review Cases</Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={isSmallScreen ? 12 : 6}>
                         <Item>
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%' }}>
-                                <Typography variant="h6">Successful Checks Trend</Typography>
-                                <LineChart width={windowWidth > 650 ? 500 : 250} height={300} data={data}>
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="name" />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend />
-                                    <Line type="monotone" dataKey="successfulChecks" stroke="#82ca9d" />
-                                </LineChart>
-                                <Typography variant="caption" sx={{ mt: 1 }}>Monthly Successful Checks</Typography>
-                            </Box>
+                            <Typography variant="h6">Successful Checks Trend</Typography>
+                            <LineChart width={windowWidth > 650 ? 500 : 250} height={300} data={data}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Line type="monotone" dataKey="successfulChecks" stroke="#82ca9d" />
+                            </LineChart>
+                            <Typography variant="caption" sx={{ mt: 1 }}>Monthly Successful Checks</Typography>
                         </Item>
                     </Grid>
                 </Grid>

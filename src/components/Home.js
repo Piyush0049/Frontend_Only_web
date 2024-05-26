@@ -52,7 +52,7 @@ const LoginBox = styled(motion.div)(({ windowWidth }) => ({
   paddingTop : windowWidth > 680 ? '40px' : "20px",
   paddingBottom : windowWidth > 680 ? '40px' : "20px",
   width: '100%',
-  maxWidth: windowWidth > 680 ? '400px' : '310px',
+  maxWidth: windowWidth > 680 ? '400px' : '280px',
   zIndex: 1,
   boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)',
 }));
@@ -79,7 +79,7 @@ const HomePage = () => {
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
-        <Typography variant="h5" mb={2} align="center" fontSize={windowWidth < 660 ? "31px" : null}>
+        <Typography variant="h5" mb={2} align="center" fontSize={windowWidth < 660 ? "25px" : null}>
           Login to your account
         </Typography>
         <TextField
@@ -147,12 +147,6 @@ const HomePage = () => {
             <GoogleIcon />
           </SocialButton>
         </Box>
-        <Typography variant="body2" color="textSecondary" align="center" mt={2}>
-          Or Sign Up Using
-        </Typography>
-        <Link href="#" underline="hover" align="center" display="block" mt={1}>
-          SIGN UP
-        </Link>
       </LoginBox>
     </BackgroundImage>
   );

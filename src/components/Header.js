@@ -79,7 +79,7 @@ const Header = () => {
             <StyledTypography
               key={index}
               variant="body1"
-              sx={{ marginX: 2, fontSize : windowWidth > 750 ? null : "18px"}}
+              sx={{ marginX: 2, fontSize : windowWidth > 750 ? null : "15px"}}
               onClick={() => handleNavigation(`/${text.replace(' ', '').toLowerCase()}`)}
             >
               {text}

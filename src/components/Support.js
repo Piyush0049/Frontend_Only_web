@@ -40,10 +40,11 @@ const SupportPage = () => {
             margin: '0 auto',
             paddingLeft: windowWidth > 1153 ? '19%' : windowWidth > 1040 ? "23%" : null,
             backgroundColor: "#D6D6D6",
-            minHeight: "1000px"
+            minHeight: "1000px",
+            paddingTop : windowWidth > 700 ? "30px" : "25px",
         }}>
             <header style={styles.header}>
-                <h1 style={{ fontSize: "50px", color: "#007bff" }}>Welcome to Support</h1>
+                <h1 style={{ fontSize: windowWidth > 700 ? "50px" : "36px", color: "#007bff" }}>Welcome to Support</h1>
                 <p style={{ fontSize: "20px", color: "#555" }}>How can we assist you today?</p>
             </header>
             <div style={styles.categories}>

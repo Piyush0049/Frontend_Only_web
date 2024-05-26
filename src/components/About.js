@@ -19,7 +19,7 @@ const AboutPage = () => {
     <div style={{backgroundColor: "#D6D6D6", minHeight : "1000px"}}>
         <div style={{ margin: '0 auto', paddingTop: '80px',paddingBottom : "80px",paddingRight :  windowWidth > 1040 ? "80px" : "30px" , textAlign: 'center', paddingLeft: windowWidth > 1040 ? "250px" : "30px"}}>
       <header style={styles.header}>
-        <h1 style={{fontSize : "55px"}}><b>About</b></h1>
+        <h1 style={{fontSize : windowWidth > 700 ? "55px" : "40px"}}><b>About</b></h1>
       </header>
       <section style={styles.aboutSection}>
         <h2>About Website</h2>

@@ -57,6 +57,7 @@ const UsersList = () => {
 
     const lineOptions = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'top',
@@ -73,9 +74,6 @@ const UsersList = () => {
     };
 
     const renderUserGraph = (user) => {
-
-
-
         const data = {
             labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             datasets: [
@@ -89,22 +87,25 @@ const UsersList = () => {
             ],
         };
 
-        return <Line data={data} options={lineOptions} />;
+        return (<Box sx={{ width: '100%', height: windowWidth > 600 ? 500 : 230 }}>
+                  <Line data={data} options={lineOptions} />;
+                </Box>) 
+        
     };
 
     return (
         <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6" }}>
-            <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 :  windowWidth > 720 ? 80: null, flexShrink: 0 }}>
+            <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 : windowWidth > 720 ? 80 : null, flexShrink: 0 }}>
                 {/* Sidebar Placeholder */}
             </Box>
             <Box sx={{ flexGrow: 1 }}>
                 <Box component="header" sx={{ height: 64 }}>
                     {/* Header Placeholder */}
                 </Box>
-                <Container sx={{ pt: 4, pb: 8 }}>
+                <Container sx={{ pt: 6, pb: 8, pl : windowWidth > 700 ? null : 4 }}>
                     <Grid container spacing={4}>
                         {userData.map((user, index) => (
-                            <Grid item xs={ windowWidth > 1440 ? 12 : 11.5} key={index}>
+                            <Grid item xs={windowWidth > 1440 ? 12 : 11.5} key={index}>
                                 <Item>
                                     <Grid container spacing={2} alignItems="center">
                                         <Grid item>

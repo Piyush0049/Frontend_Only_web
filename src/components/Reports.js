@@ -50,7 +50,7 @@ const Reports = () => {
     }, [windowWidth]);
     return (
         <>
-            <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6", minHeight: "100vh", pt: 8 }}>
+            <Box sx={{ display: 'flex', backgroundColor: "#D6D6D6", minHeight: "100vh", pt: 11 }}>
                 <Box component="nav" sx={{ width: windowWidth > 1040 ? 240 : null, flexShrink: 0 }}>
                 </Box>
                 <Container sx={{ pt: 4, pb: 8 }}>

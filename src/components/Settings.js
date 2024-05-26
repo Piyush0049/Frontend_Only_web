@@ -62,9 +62,9 @@ const Settings = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box sx={{ display: 'flex', backgroundColor: theme.palette.background.default, minHeight: '100vh', pt: 8 }}>
+            <Box sx={{ display: 'flex', backgroundColor: theme.palette.background.default, minHeight: '100vh', pt: 11 }}>
                 <Box component="nav" sx={{ width: windowWidth > 1034 ? 240 : null, flexShrink: 0 }}>
-                    
+
                 </Box>
                 <Container sx={{ pt: 4, pb: 8 }}>
                     <Grid container spacing={4}>
